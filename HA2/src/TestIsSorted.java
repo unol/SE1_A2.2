@@ -6,10 +6,11 @@ class TestIsSorted {
 
 	@Test
 	void Test_IsWellSorted_ReturnVal() {
-		
-		assertEquals(true,"*");//* Hier IsWellSorted mit Sequenz aufrufen, Rückgabewert sollte true sein
-		
-		assertEquals(false, "*");//* Hier IsWellSorted mit Sequenz aufrufen, Rückgabewert sollte false sein
+		Sorted s = new Sorted();
+		assertEquals(true, s.isWellSorted(new String[] {"A", "B", "C", "D"}));
+		assertEquals(false, s.isWellSorted(new String[] {"D", "C", "B", "A"}));
+		assertEquals(false, s.isWellSorted(new String[] {"C", "D", "B", "A"}));
+		assertEquals(true, s.isWellSorted(new String[] {"A", "E", "B", "K", "C", "D"}));
 	}
 
 }
